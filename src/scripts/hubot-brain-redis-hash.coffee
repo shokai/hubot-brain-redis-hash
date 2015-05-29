@@ -24,6 +24,8 @@ module.exports = (robot) ->
   client = Redis.createClient(info.port, info.hostname)
   oldkeys = {}
 
+  robot.logger.info "brain: #{info.toString()}"
+
   if info.auth
     client.auth info.auth.split(":")[1]
 
